@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/Cours 2 UGUI.unity
+  isLoaded: 1
+  isActive: 1
