@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/Extensions.unity
-  isLoaded: 1
-  isActive: 1
