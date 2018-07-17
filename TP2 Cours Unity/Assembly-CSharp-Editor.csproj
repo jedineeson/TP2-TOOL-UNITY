@@ -53,6 +53,9 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Editor\EnvironmentEditor.cs" />
      <Compile Include="Assets\Scripts\Editor\ObjectCreator.cs" />
+ <Reference Include="Facebook.Unity.Settings">
+ <HintPath>D:/Users/1810027/Desktop/TP2-TOOL-UNITY/TP2 Cours Unity/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+ </Reference>
  <Reference Include="Vuforia.UnityExtensions.Editor">
  <HintPath>C:/Program Files/Unity2017.4/Editor/Data/PlaybackEngines/VuforiaSupport/Managed/Editor/Vuforia.UnityExtensions.Editor.dll</HintPath>
  </Reference>
