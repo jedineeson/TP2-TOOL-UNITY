@@ -8,7 +8,6 @@ using UnityEditor;
 public class EnvironmentEditor : Editor
 {
 	private Environment m_Environment;
-
 	private float m_MinOffset;
 	private float m_MaxOffset;
 	private float m_MinRotation;
@@ -37,9 +36,9 @@ public class EnvironmentEditor : Editor
 		if(GUILayout.Button("Random Offset"))
 		{
 			Vector3 vec3 = new Vector3();
-            vec3.x = Random.Range(m_MinOffset, m_MaxOffset);
-			vec3.y = Random.Range(m_MinOffset, m_MaxOffset);
-			vec3.z = Random.Range(m_MinOffset, m_MaxOffset);
+            vec3.x += Random.Range(m_MinOffset, m_MaxOffset);
+			vec3.y += Random.Range(m_MinOffset, m_MaxOffset);
+			vec3.z += Random.Range(m_MinOffset, m_MaxOffset);
 			m_Environment.transform.localPosition = vec3;
 		}
 		GUI.color = Color.white;
@@ -55,9 +54,9 @@ public class EnvironmentEditor : Editor
 		if(GUILayout.Button("Random Rotation"))
 		{
 			Vector3 vec3 = new Vector3();
-            vec3.x = Random.Range(m_MinRotation, m_MaxRotation);
-			vec3.y = Random.Range(m_MinRotation, m_MaxRotation);
-			vec3.z = Random.Range(m_MinRotation, m_MaxRotation);
+            vec3.x += Random.Range(m_MinRotation, m_MaxRotation);
+			vec3.y += Random.Range(m_MinRotation, m_MaxRotation);
+			vec3.z += Random.Range(m_MinRotation, m_MaxRotation);
 			m_Environment.transform.rotation = Quaternion.Euler(vec3);
 		}
 		GUI.color = Color.white;
@@ -84,12 +83,10 @@ public class EnvironmentEditor : Editor
 		SerializedProperty health = serializedObject.FindProperty("m_Health");
 		health.intValue = EditorGUILayout.IntSlider("Health", health.intValue, 0, 100);
 		
-		EditorGUILayout.Toggle("Draw Bounds", m_DrawBounds);
-		EditorGUILayout.ColorField("Bounds Color", m_BoundsColor);
+		m_DrawBounds = EditorGUILayout.Toggle("Draw Bounds", m_DrawBounds);
+		m_BoundsColor = EditorGUILayout.ColorField("Bounds Color", m_BoundsColor);
 		
 		serializedObject.ApplyModifiedProperties();
 	}
-
-
 	// Pour Afficher l'inspecteur par defaut sauf certains parametres, veuillez utiliser DrawPropertiesExcluding(serializedObject, "m_MyVariable");
 }
